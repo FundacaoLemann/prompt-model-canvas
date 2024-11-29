@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&display=swap" rel="stylesheet">
     <style>
         @page {
@@ -234,6 +235,97 @@
             }
             .page {
                 page-break-after: always;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            .pages-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .page {
+                width: 100%;
+                height: auto;
+                min-height: 297mm;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            .page {
+                padding: 1rem;
+                box-shadow: none;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .block {
+                min-height: auto;
+                padding: 0.6rem;
+            }
+            .block-title {
+                font-size: 0.9rem;
+            }
+            .block-content {
+                font-size: 0.8rem;
+            }
+            .example {
+                font-size: 0.75rem;
+            }
+            .title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                padding: 0 2rem;
+            }
+            .logo {
+                position: relative;
+                top: 0;
+                right: 0;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            .logo img {
+                height: 25px;
+            }
+            .footer {
+                margin-top: 1.5rem;
+            }
+            .footer .draft-text {
+                font-size: 0.7rem;
+            }
+            .double-width {
+                grid-column: span 1;
+            }
+            .lined-page {
+                min-height: 100vh;
+            }
+            .lined-content {
+                margin-top: 50px;
+                padding: 0 30px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .page {
+                padding: 0.8rem;
+            }
+            .block {
+                padding: 0.5rem;
+            }
+            .title {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+            .block-title {
+                font-size: 0.85rem;
+            }
+            .lined-content {
+                padding: 0 20px;
+            }
+            .lined-page::after {
+                left: 25px;
             }
         }
     </style>
